@@ -1,12 +1,3 @@
-$( document ).ready(function() {
-    
-	$(".my-Own-btn").on( "click", function() {
-		alert( "Handler for `click` called." );
-	});
-
-
-});
-
 import * as THREE from 'three';
 
 const width = window.innerWidth, height = window.innerHeight;
