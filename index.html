@@ -5,16 +5,22 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Page Title</title>
 
-        <link href="include/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link href="include/css/bootstrap.min.css" rel="stylesheet">
         <link rel="stylesheet" href="include/css/styles.css">
 
+        <script type="importmap">
+            {
+              "imports": {
+                "three": "include/js/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.162.0/examples/jsm/"
+              }
+            }
+          </script>
         <script src="include/js/jquery-3.7.1.min.js"></script>
-        <script src="include/js/main.js"></script>
-
     </head>
     <body>
 
-        <h1 class="btn">This is a Heading</h1>
+        <!--<h1 class="btn">This is a Heading</h1>
         <p>This is a paragraph.</p>
 
         <div class="container">
@@ -27,9 +33,9 @@
                 </div>
             </div>
 
-        </div>
+        </div>-->
 
-
-        <script src="include/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <script type="module" src="include/js/main.js"></script>
+        <script src="include/js/bootstrap.bundle.min.js"></script>
     </body>
 </html>
