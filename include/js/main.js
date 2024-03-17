@@ -1,6 +1,6 @@
 $( document ).ready(function() {
     
-	$( ".btn" ).on( "click", function() {
+	$(".my-Own-btn").on( "click", function() {
 		alert( "Handler for `click` called." );
 	});
 
