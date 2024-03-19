@@ -1,32 +1,43 @@
+import '../css/styles.css'
 import * as THREE from 'three';
 
-const width = window.innerWidth, height = window.innerHeight;
 
-// init
-
-const camera = new THREE.PerspectiveCamera( 70, width / height, 0.01, 10 );
-camera.position.z = 1;
 
 const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 0.1, 1000 );
 
-const geometry = new THREE.BoxGeometry( 0.2, 0.2, 0.2 );
+const renderer = new THREE.WebGLRenderer({
+	canvas: $("#bg"),
+});
+
+renderer.setPixelRatio( window.devicePixelRatio );
+renderer.setSize( window.innerWidth, window.innerHeight );
+
+camera.position.setZ(30);
+
+
+const geometry = new THREE.TorusGeometry( 10, 3, 16, 100 );
 const material = new THREE.MeshNormalMaterial();
+//const material2 = new THREE.MeshBasicMaterial({color: 0xFF6347, wireframe: true});
 
-const mesh = new THREE.Mesh( geometry, material );
-scene.add( mesh );
+const torus = new THREE.Mesh( geometry, material );
+scene.add( torus );
 
-const renderer = new THREE.WebGLRenderer( { antialias: true } );
-renderer.setSize( width, height );
-renderer.setAnimationLoop( animation );
-document.body.appendChild( renderer.domElement );
 
 // animation
-
 function animation( time ) {
+	
+	requestAnimationFrame( animate )
 
-	mesh.rotation.x = time / 2000;
-	mesh.rotation.y = time / 1000;
+	torus.rotation.x += 0.01;
+	torus.rotation.y += 0.005;
+	torus.rotation.z += 0.01;
+	//torus.rotation.x = time / 2000;
+	//torus.rotation.y = time / 1000;
 
 	renderer.render( scene, camera );
-
 }
+animate()
+
+//renderer.setAnimationLoop( animation );
+//document.body.appendChild( renderer.domElement );
