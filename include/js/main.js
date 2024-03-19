@@ -17,7 +17,7 @@ renderer.setSize( window.innerWidth, window.innerHeight );
 camera.position.setZ(30);
 
 
-const geometry = new THREE.TorusGeometry( 10, 3, 16, 100 );
+const geometry = new THREE.TorusGeometry( 10, 3, 35, 110 );
 const material = new THREE.MeshNormalMaterial();
 //const material2 = new THREE.MeshBasicMaterial({color: 0xFF6347, wireframe: true});
 
