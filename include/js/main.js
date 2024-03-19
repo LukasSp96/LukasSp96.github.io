@@ -25,7 +25,7 @@ scene.add( torus );
 
 
 // animation
-function animation( time ) {
+function animate(time) {
 	
 	requestAnimationFrame( animate )
 
