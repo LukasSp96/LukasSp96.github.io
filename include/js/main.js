@@ -18,13 +18,22 @@ camera.position.setZ(30);
 
 
 const geometry = new THREE.TorusGeometry( 10, 3, 35, 110 );
-const material = new THREE.MeshNormalMaterial();
+const material = new THREE.MeshStandardMaterial({color: 0xFF6347});
+//const material = new THREE.MeshNormalMaterial();
 //const material2 = new THREE.MeshBasicMaterial({color: 0xFF6347, wireframe: true});
 
 const torus = new THREE.Mesh( geometry, material );
 scene.add( torus );
 
+const pointLight = new THREE.PointLight(0xffffff);
+pointLight.position.set(5, 5, 5);
 
+const ambientLIght = new THREE.AmbientLight(0xffffff);
+scene.add(pointLight, ambientLIght);
+
+const lightHelper = new THREE.PointLightHelper(pointLight);
+const gridHelper = new THREE.GridHelper(200, 50);
+scene.add(lightHelper, gridHelper);
 // animation
 function animate(time) {
 	
